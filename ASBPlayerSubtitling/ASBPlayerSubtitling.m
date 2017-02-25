@@ -15,8 +15,6 @@
 
 @interface ASBPlayerSubtitling ()
 @property (nonatomic, assign) id timeObserver;
-@property (nonatomic, assign) CGFloat frameDuration;
-@property (nonatomic, assign) CGFloat nbFramesPerSecond;
 @property (nonatomic, strong) NSMutableArray *subtitles;
 @property (nonatomic, strong) dispatch_queue_t queue;
 @property (nonatomic, copy) NSString *currentText;
