@@ -22,9 +22,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *label;
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, assign) BOOL visible;
-@property (nonatomic, assign) CGFloat frameDuration;
-@property (nonatomic, assign) CGFloat nbFramesPerSecond;
 
+- (void)setNbFramesPerSecond:(CGFloat)nbFramesPerSecond;
 - (void)loadSubtitlesAtURL:(NSURL *)url error:(NSError **)error;
 - (void)loadSRTContent:(NSString *)string error:(NSError **)error;
 - (void)removeSubtitles;

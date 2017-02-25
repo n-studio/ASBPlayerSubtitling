@@ -19,6 +19,8 @@
 @property (nonatomic, strong) dispatch_queue_t queue;
 @property (nonatomic, copy) NSString *currentText;
 @property (nonatomic, copy) NSString *cssStyle;
+@property (nonatomic, assign) CGFloat frameDuration;
+@property (nonatomic, assign) CGFloat nbFramesPerSecond;
 @end
 
 @implementation ASBPlayerSubtitling
@@ -150,6 +152,17 @@
     _visible = visible;
     self.label.hidden = !visible;
     self.containerView.hidden = !visible;
+}
+    
+- (void)setNbFramesPerSecond:(CGFloat)nbFramesPerSecond
+{
+    [self.player pause];
+    [self removeTimeObserver];
+    
+    _nbFramesPerSecond = nbFramesPerSecond;
+    self.frameDuration = 1/_nbFramesPerSecond;
+    [self setupTimeObserver];
+    [self computeStyle];
 }
 
 #pragma mark - Private
