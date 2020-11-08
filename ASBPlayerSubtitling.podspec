@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     :git => "https://github.com/autresphere/ASBPlayerSubtitling.git",
     :tag => "0.1"
   }
-  s.platform = :ios, '7.0'
+  s.platforms = { ios: '9.0', osx: '10.15' }
   s.source_files = 'ASBPlayerSubtitling/*.{h,m}'
   s.frameworks = 'UIKit', 'Foundation', 'CoreGraphics', 'AVFoundation'
   s.requires_arc = true
