@@ -9,8 +9,6 @@
 #import "ASBPlayerSubtitling.h"
 #import <UIKit/UIKit.h>
 
-static CGFloat *const DefaultNbFramesPerSecond = 30;
-
 @implementation ASBSubtitle
 @end
 
@@ -55,9 +53,6 @@ static CGFloat *const DefaultNbFramesPerSecond = 30;
     _player = player;
     
     self.nbFramesPerSecond = [ASBPlayerSubtitling nominalFrameRateForPlayer:self.player];
-    if (self.nbFramesPerSecond == 0) {
-        self.nbFramesPerSecond = DefaultNbFramesPerSecond;
-    }
     self.frameDuration = 1/self.nbFramesPerSecond;
     self.label.text = @"";
     self.containerView.hidden = YES;
